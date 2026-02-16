@@ -1,8 +1,8 @@
-// Replace with your actual OMDB API key
-const API_KEY = '12f1d633';
+
+const API_KEY = '6b54c855';
 const BASE_URL = 'https://www.omdbapi.com/';
 
-// DOM Elements
+
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
 const moviesGrid = document.getElementById('moviesGrid');
@@ -12,12 +12,12 @@ const modal = document.getElementById('modal');
 const modalContent = document.getElementById('modalContent');
 const closeModal = document.getElementById('closeModal');
 
-// Initial load - fetch popular movies (using "marvel" as default search)
+
 document.addEventListener('DOMContentLoaded', () => {
     searchMovies('marvel');
 });
 
-// Event Listeners
+
 searchBtn.addEventListener('click', () => {
     const query = searchInput.value.trim();
     if (query) {
@@ -40,17 +40,17 @@ closeModal.addEventListener('click', () => {
     modal.classList.remove('active');
 });
 
-// Close modal when clicking outside
+
 modal.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.classList.remove('active');
     }
 });
 
-// Search movies function
+
 async function searchMovies(query) {
     try {
-        // Show loading, hide error and previous results
+        
         loading.classList.remove('hidden');
         error.classList.add('hidden');
         moviesGrid.innerHTML = '';
@@ -72,7 +72,7 @@ async function searchMovies(query) {
     }
 }
 
-// Display movies in grid
+
 function displayMovies(movies) {
     moviesGrid.innerHTML = movies.map(movie => `
         <div class="movie-card" onclick="getMovieDetails('${movie.imdbID}')">
@@ -91,7 +91,7 @@ function displayMovies(movies) {
     `).join('');
 }
 
-// Get movie details for modal
+
 async function getMovieDetails(imdbID) {
     try {
         modalContent.innerHTML = '<div class="text-center py-8">Loading...</div>';
@@ -111,7 +111,7 @@ async function getMovieDetails(imdbID) {
     }
 }
 
-// Display movie details in modal
+
 function displayMovieDetails(movie) {
     modalContent.innerHTML = `
         <div class="flex flex-col md:flex-row gap-6">
@@ -169,11 +169,11 @@ function displayMovieDetails(movie) {
     `;
 }
 
-// Show error message
+
 function showError(message) {
     error.querySelector('p').textContent = `❌ ${message}`;
     error.classList.remove('hidden');
 }
 
-// Make function global for onclick event
+
 window.getMovieDetails = getMovieDetails;
