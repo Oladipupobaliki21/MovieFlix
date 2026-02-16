@@ -1,0 +1,23 @@
+{
+  "name": "movie-website",
+  "version": "1.0.0",
+  "description": "Movie search website using OMDB API",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  },
+  "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oladipupobaliki21/Harytechs-Movie-Library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Oladipupobaliki21/Harytechs-Movie-Library/issues"
+  },
+  "homepage": "https://github.com/Oladipupobaliki21/Harytechs-Movie-Library#readme"
+}

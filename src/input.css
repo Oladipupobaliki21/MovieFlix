@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .movie-card {
+    @apply bg-movie-secondary rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105 cursor-pointer;
+  }
+  
+  .movie-poster {
+    @apply w-full h-96 object-cover;
+  }
+  
+  .btn-primary {
+    @apply bg-movie-accent text-white px-6 py-2 rounded-lg hover:bg-red-500 transition-colors font-semibold;
+  }
+  
+  .search-input {
+    @apply w-full md:w-96 px-4 py-2 rounded-lg bg-movie-secondary text-white border border-gray-600 focus:outline-none focus:border-movie-accent;
+  }
+}
